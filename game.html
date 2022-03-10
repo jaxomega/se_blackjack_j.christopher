@@ -8,21 +8,52 @@
     <title>Document</title>
 </head>
 <body>
+    <img src="" alt="">
     <header>
         <a href="home_page.html">HOME</a>
         <a href="rules.html">RULES</a>
         <a href="tips_strategies.html">TIPS AND STRATEGIES</a>
-    </header> 
-    <div id="header">
+    </header>
+    
+    <table cellspacing="10" cellpadding="0" border="0" align="center">
+    
+    <div id="dealer">Dealer's Cards:
+        <!-- <div id="dealer1"></div>
+        <div id="dealer2"></div>
+        <div id="dealer3"></div>
+        <div id="dealer4"></div>
+        <div id="dealer5"></div> -->
+        <span id="deal-stay">STAY</span>
+        Dealer's Hand -
+        <span id="deal-points">?</span>
+    </div>
+    <div id="deal-hand"></div>
+    <div id="player">Your Cards:
+        <!-- <div id="player1"></div>
+        <div id="player2"></div>
+        <div id="player3"></div>
+        <div id="player4"></div>
+        <div id="player5"></div> -->
+        <span id="play-stay">STAY</span>
+        Your Hand -
+        <span id="play-points">0</span>
+        <div id="play-hand"></div>
+    </div>
+    <div id="play-controls">
+        <input type="button" id="game" value="Play!">New Game</button>
+        <input type="button" id="hit" value="Hit!">Hit</button>
+        <input type="button" id="stay" value="Stay!">Stay</button>
+    </div>
+    </table>
 
-    </div>
-    <div id="main">
-        <table cellspacing="10" cellpadding="0" border="0" align="center">
-        </table>
-    </div>
-    <div id="footer">
-
-    </div>
 </body>
+<footer>
+    <div class="dealerWins" id="dealerWins">
+        <h1>Dealer Wins!</h1>
+    </div>
+    <div class="playerWins" id="playerWins">
+        <h1>Player Wins!</h1>
+    </div>
+</footer>
 <script defer src="app.js" charset="utf-8"></script>
 </html>

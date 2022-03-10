@@ -1,20 +1,33 @@
 header {
     background-color: darkblue;
+    display: block;
     height: 100%;
     width: 100%;
     border-bottom: solid 4px black;
 }
 
 h1 {
-
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    position: relative;
+    text-align: left;
+    font-size: larger;
 }
 
 h2 {
-    
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    position: relative;
+    text-align: left;
+    font-size: large;
 }
 
 h3 {
-
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    position: relative;
+    text-align: center;
+    font-size: larger;
 }
 
 body {
@@ -22,7 +35,7 @@ body {
     color: white;
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 700;
     direction: ltr;
     line-height: 1.34;
@@ -30,27 +43,134 @@ body {
 }
 
 p {
-
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    position: relative;
+    text-align: left;
+    font-size: medium;
 }
 
-ul {
-
-}
-
-ol {
-
+ul, ol {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    position: relative;
+    text-align: left;
+    font-size: large;
+    padding: 2px;
 }
 
 li {
-
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    position: relative;
+    text-align: left;
+    font-size: medium;
 }
 
 table {
-    position: relative;
+    background-image: "https://static.vecteezy.com/system/resources/previews/002/082/630/original/poker-background-with-royal-straight-flush-and-chips-on-green-casino-background-modern-poker-widescreen-wallpaper-vector.jpg";
+    position: absolute;
+    display: table;
     border: thick solid lightgreen;
     background-color: green;
-    width: 579px;
-    height: 500px;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+div.dealer {
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    border: 2px solid lightgreen;
+    background-color: lightgreen;
+    width: 79px;
+    height: 123px;
+}
+div.dealer1 {
+    left: 50px;
+    top: 50px;
+}
+div.dealer2 {
+    left: 150px;
+    top: 50px;
+}
+div.dealer3 {
+    left: 250px;
+    top: 50px;
+}
+div.dealer4 {
+    left: 350px;
+    top: 50px;
+}
+div.dealer5 {
+    left: 450px;
+    top: 50px;
+}
+div.player {
+    position: absolute;
+    left: 20px;
+    top: 210px;
+    border: 2px, solid, lightgreen;
+    background-color: lightgreen;
+    width: 79px;
+    height: 123px;
+}
+div.player1 {
+    left: 50px;
+    top: 250px;
+}
+div.player2 {
+    left: 150px;
+    top: 250px;
+}
+div.player3 {
+    left: 250px;
+    top: 250px;
+}
+div.player4 {
+    left: 350px;
+    top: 250px;
+}
+div.player5 {
+    left: 450px;
+    top: 250px;
+}
+
+button{
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0px 10px 0px;
+    padding: 10px;
+    box-shadow: 0 1px 3px black;
+    border: 2px solid black;
+    border-radius: 6px;
+}
+button#newgame {
+    background-color: purple;
+    width: 70px;
+}
+button#hit {
+    background-color: red;
+    width: 70px;
+}
+button#stay {
+    background-color: orange;
+    width: 70px;
+}
+
+game-holder {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+game-frame {
+    position: relative;
+    border: none;
+    width: 100%;
+    height: 100%;
+    outline: 0;
 }
 
 footer {
@@ -60,18 +180,4 @@ footer {
     font-size: 16pt;
     text-shadow: 1px 1px 1px darkgrey;
     color: white;
-}
-
-game-holder {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-game-frame {
-    position: relative;
-    border: none;
-    width: 100%;
-    height: 100%;
-    outline: 0;
 }
