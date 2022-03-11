@@ -1,9 +1,26 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+    line-height: initial;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
 header {
-    background-color: darkblue;
+    background-color: #4aad4a;
+    text-align: center;
     display: block;
+    padding: 20px;
+    margin-bottom: 20px;
     height: 100%;
     width: 100%;
-    border-bottom: solid 4px black;
+    border: solid 5px #a95555;
+}
+#header {
+    color: white;
+   padding: 5%;
 }
 
 h1 {
@@ -12,6 +29,7 @@ h1 {
     position: relative;
     text-align: left;
     font-size: larger;
+    left: 20px;
 }
 
 h2 {
@@ -20,14 +38,7 @@ h2 {
     position: relative;
     text-align: left;
     font-size: large;
-}
-
-h3 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: white;
-    position: relative;
-    text-align: center;
-    font-size: larger;
+    left: 20px;
 }
 
 body {
@@ -47,6 +58,7 @@ p {
     color: white;
     position: relative;
     text-align: left;
+    left: 20px;
     font-size: medium;
 }
 
@@ -55,6 +67,7 @@ ul, ol {
     color: white;
     position: relative;
     text-align: left;
+    left: 20px;
     font-size: large;
     padding: 2px;
 }
@@ -64,82 +77,147 @@ li {
     color: white;
     position: relative;
     text-align: left;
+    left: 50px;
     font-size: medium;
 }
 
 table {
-    background-image: "https://static.vecteezy.com/system/resources/previews/002/082/630/original/poker-background-with-royal-straight-flush-and-chips-on-green-casino-background-modern-poker-widescreen-wallpaper-vector.jpg";
-    position: absolute;
-    display: table;
-    border: thick solid lightgreen;
-    background-color: green;
-    top: 0px;
-    left: 0px;
     width: 100%;
-    height: 100%;
+    height: 400px;
+    background-color: #4aad4a;
+    position: absolute;
+    left: 50%;
+    top: 450%;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 200px;
+    border: 15px solid #a95555;
 }
 
-div.dealer {
+div.deal-cards {
+    color: white;
+    text-align: center;
+    background-color: green;
+    border-radius: 20px;
+    border: 5px solid green;
+    padding: 4px;
     position: absolute;
-    left: 20px;
-    top: 15px;
-    border: 2px solid lightgreen;
-    background-color: lightgreen;
-    width: 79px;
-    height: 123px;
+    left: 50%;
+    top: 200%;
 }
-div.dealer1 {
-    left: 50px;
-    top: 50px;
-}
-div.dealer2 {
-    left: 150px;
-    top: 50px;
-}
-div.dealer3 {
-    left: 250px;
-    top: 50px;
-}
-div.dealer4 {
-    left: 350px;
-    top: 50px;
-}
-div.dealer5 {
-    left: 450px;
-    top: 50px;
-}
-div.player {
+div.dcard1 {
+    background-color: white;
+    width: 70px;
+    height: 100px;
     position: absolute;
-    left: 20px;
-    top: 210px;
-    border: 2px, solid, lightgreen;
-    background-color: lightgreen;
-    width: 79px;
-    height: 123px;
+    left: 20%;
+    top: 450%;
+    padding: 4px;
+    border: lightgreen 2px;
 }
-div.player1 {
-    left: 50px;
-    top: 250px;
+div.dcard2 {
+    background-color: white;
+    width: 70px;
+    height: 100px;
+    position: absolute;
+    left: 35%;
+    top: 450%;
+    padding: 4px;
+    border: lightgreen 2px;
 }
-div.player2 {
-    left: 150px;
-    top: 250px;
+div.dcard3 {
+    background-color: white;
+    width: 70px;
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    top: 450%;
+    padding: 4px;
+    border: lightgreen 2px;
 }
-div.player3 {
-    left: 250px;
-    top: 250px;
+div.dcard4 {
+    background-color: white;
+    width: 70px;
+    height: 100px;
+    position: absolute;
+    left: 65%;
+    top: 450%;
+    padding: 4px;
+    border: lightgreen 2px;
 }
-div.player4 {
-    left: 350px;
-    top: 250px;
+div.dcard5 {
+    background-color: white;
+    width: 70px;
+    height: 100px;
+    position: absolute;
+    left: 80%;
+    top: 450%;
+    padding: 4px;
+    border: lightgreen 2px;
 }
-div.player5 {
-    left: 450px;
-    top: 250px;
+div.player-cards {
+    color: white;
+    text-align: center;
+    background-color: green;
+    border-radius: 20px;
+    border: 5px solid green;
+    padding: 4px;
+    position: absolute;
+    left: 50%;
+    top: 650%;
+}
+div.pcard1 {
+    background-color: white;
+    width: 70px;
+    height: 100px;
+    position: absolute;
+    left: 20%;
+    top: 480%;
+    padding: 4px;
+    border: lightgreen 2px;
+}
+div.pcard2 {
+    background-color: white;
+    width: 70px;
+    height: 100px;
+    position: absolute;
+    left: 35%;
+    top: 480%;
+    padding: 4px;
+    border: lightgreen 2px;
+}
+div.pcard3 {
+    background-color: white;
+    width: 70px;
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    top: 480%;
+    padding: 4px;
+    border: lightgreen 2px;
+}
+div.pcard4 {
+    background-color: white;
+    width: 70px;
+    height: 100px;
+    position: absolute;
+    left: 65%;
+    top: 480%;
+    padding: 4px;
+    border: lightgreen 2px;
+}
+div.pcard5 {
+    background-color: white;
+    width: 70px;
+    height: 100px;
+    position: absolute;
+    left: 80%;
+    top: 480%;
+    padding: 4px;
+    border: lightgreen 2px;
 }
 
 button{
-    font-size: 18px;
+    font-size: 25px;
     font-weight: bold;
     margin: 10px 0px 10px 0px;
     padding: 10px;
@@ -147,37 +225,21 @@ button{
     border: 2px solid black;
     border-radius: 6px;
 }
-button#newgame {
-    background-color: purple;
-    width: 70px;
-}
-button#hit {
-    background-color: red;
-    width: 70px;
-}
-button#stay {
-    background-color: orange;
-    width: 70px;
-}
-
-game-holder {
+#play-controls {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    size: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 10px 0px 10px 0px;
+    padding: 10px;
+    left: 40%;
+    top: 750%;
 }
-game-frame {
-    position: relative;
-    border: none;
-    width: 100%;
-    height: 100%;
-    outline: 0;
+#play-points{
+    left: 30%;
+    top: 650%;
 }
-
-footer {
-    padding-top: 24px;
-    padding-bottom: 24px;
-    text-align: center;
-    font-size: 16pt;
-    text-shadow: 1px 1px 1px darkgrey;
-    color: white;
+#deal-points {
+    left: 30%;
+    top: 200%;
 }
