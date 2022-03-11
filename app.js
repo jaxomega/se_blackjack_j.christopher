@@ -1,19 +1,22 @@
-const symbols = "DIAMONDS"; "HEARTS"; "CLUBS"; "SPADES";
-const values = [
-    "A",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-    "J",
-    "Q",
-    "K"
-]
+var suits = ['D','H','C','S'];
+var values = ['A','2','3','4','5','6','7','8','9','10','J','Q','K'];
+var deck = [];
+for (var suitCounter = 0; suitCount < 4; suitCounter++) {
+    for (var rankCounter = 0; rankCounter < 13; rankCounter++) {
+        deck.push(ranks[rankCounter] + suits[suitCounter]);
+    }
+}
+class card {
+    constructor(suit, value) {
+        this.suit = suit
+        this.value = value
+    }
+}
+const dealerCardSlot = document.querySelector(".deal-card-slot")
+const playerCardSlot = document.querySelector(".play-card-slot")
+const dealerDeckElement = document.querySelector(".deal-deck")
+const playerDeckElement = document.querySelector(".play-deck")
+const text = document.querySelector(".text")
 
 var game = {
     hdStay: null,
@@ -34,7 +37,7 @@ var game = {
     dHit: null,
     pHit: null,
     turn: 0,
-};
+}
 
 init : () => {
     hdStay = document.getElementById("deal-stay");
@@ -44,7 +47,19 @@ init : () => {
     hpPoints = document.getElementById("play-points");
     hpHand = document.getElementById("play-hand");
     hpCon = document.getElementById("play-controls");
-};
+}
+document.addEventListener("click", () => {
+    if (stop) {
+      startGame()
+      return
+    }
+  
+    if (inRound) {
+      cleanBeforeRound()
+    } else {
+      flipCards()
+    }
+  })
 //New Game
 game : () => {
     game.deck = [];
@@ -62,7 +77,7 @@ game : () => {
     game.hpStay.classList.remove("stood");
     game.hpCon.classList.add("started");
 //Shuffle Deck
-
+    
     for (let i = 0; 1 < 4; i++)
     {for (let j = 1; j < 14; j++)
     {game.deck.push({s : i, n : j});
@@ -74,6 +89,16 @@ game : () => {
         game.deck[j] = temp;
     }
 }
+hitButton.addEventListener('click', function(){
+    playerCards.push(getNextCard());
+    checkForEndOfGame();
+    showStatus();
+  });
+stayButton.addEventListener('click', function(){
+    gameOver = true;
+    checkForEndOfGame();
+    showStatus();
+  });
 //Draw 4 Cards
     game.turn = 0;
     game.draw();
@@ -90,14 +115,13 @@ game : () => {
     game.points();
     var winner = game.check();
     if (winner == null)
-    {game.turn = 0;}
-;
+    {game.turn = 0}
 //AI
 ai : () => {if (game.turn) {
     if (game.dPoints >= game.safety)
     {game.stay();}
     else {game.hit()}
-}};
+}}
 //Draw a card
 draw : () => {
     var card = game.deck.pop(),
@@ -118,7 +142,8 @@ draw : () => {
             game.player.push(card);
             game.hpHand.appendChild(cardh);
                 }
-            };
+            }
+            
 //Hit
 hit : () => {
     game.draw(); game.points();
@@ -130,7 +155,25 @@ hit : () => {
     }
     var winner = game.check();
     if (winner==null) {game.next();}
-};
+}
+function flipCards() {
+    inRound = true
+  
+    const playerCard = playerDeck.pop()
+    const dealerCard = dealerDeck.pop()
+  
+    playerCardSlot.appendChild(playerCard.getHTML())
+    dealerCardSlot.appendChild(dealerCard.getHTML())
+  
+    updateDeckCount()
+function cleanBeforeRound() {
+        inRound = false
+        dealerCardSlot.innerHTML = ""
+        playerCardSlot.innerHTML = ""
+        text.innerText = ""
+      
+    updateDeckCount()
+    }
 //Stay
 stay : () => {
     if (game.turn)
@@ -141,7 +184,7 @@ stay : () => {
     var winner = (game.pStay && game.dStay) ? game.check() : null;
     if (winner == null)
     {game.next()}
-};
+}
 //Next Turn
 next : () => {
     game.turn = game.turn == 0 ? 1 : 0;
@@ -156,7 +199,7 @@ next : () => {
         if (game.pstand)
         {game.turn = 1; game.ai();}
     }
-};
+}
 //Calculate points
 points : () => {
     var aces = 0, points = 0;
@@ -169,7 +212,7 @@ points : () => {
         {points += i.n;}
     }
     if (aces!=0) {
-        var minmax = [];
+        var minimax = [];
         for (let elevens = 0; elevens<=aces; elevens++) {
         let calc = points + (elevens * 11) + (aces-elevens * 1);
             minimax.push(calc);
@@ -185,7 +228,7 @@ points : () => {
     else {
         game.pPoints = points;
         game.hpPoints,innerHTML = points
-    };
+    }
 }
 //Win or Lose
 check : () => {
@@ -229,5 +272,6 @@ check : () => {
         alert(message)
     }
     return winner
-},
+}
+}
 window.addEventListener ("DOMContentLoaded", game.init)
